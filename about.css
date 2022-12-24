@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Poppins:wght@300;400;600;700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Montserrat', sans-serif;   
+     
+}
+html{
+       font-size: 62.5%;   
+}
+.header{
+    position: fixed;   
+    background-color: white;
+    padding: 3rem;
+    z-index: 1000;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    height: 2rem;   
+    width: 100vw;                                          
+    justify-content: space-between;
+}
+
+.logo{
+    float: left;
+    height: 5.5rem;
+    width: 16rem;
+    /* background-color: aqua; */
+
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+}
+
+.navbar{
+    /* background-color: black;   */
+    margin-right: 8.9rem;
+    margin-bottom: 1rem;
+}
+.navbar ul{
+    list-style: none;
+    
+}
+.header .navbar ul li{
+    float: left;
+    position: relative;
+}
+.header .navbar ul li a{
+    font-size: 1.8rem;
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+    transition: all 0.2s ease;
+    
+}
+.header .navbar ul li a:hover{
+    /* text-decoration: underline 2px red ; */
+    background-color: rgb(123, 191, 207);  
+
+}
+.header .navbar ul li ul{
+    margin-top:0.1rem;
+    position: absolute;
+    right: 0;
+    width: 18rem;
+    background-color:rgb(77, 152, 170);
+    display: none;
+    
+}
+.header .navbar ul li ul li a{
+    font-size: 1.5rem;
+
+}
+.header .navbar ul li ul li{
+    
+    width: 15rem; 
+    border-top: 1px solid rgba(245, 211, 211, 0.329); 
+}
+.header .navbar ul li:hover >   ul
+{
+    display: initial;
+    position: absolute;
+    
+}
+.fa-solid {
+    font-size: 25px;
+    color: rgb(73, 155, 187);
+}
+
+#toggle ,.header label{
+    display: none; 
+}
+
+@media (max-width: 900px){
+    .header label{
+        display: initial;
+    }
+    .header{
+        padding: 5rem;
+    }
+    .header .navbar{
+        position: absolute;
+        top:80%;
+        left: 0;
+        right: 0;
+        background-color:rgb(77, 152, 170);
+        display: none;  
+    }
+    .header .navbar ul li{
+        width: 100%;
+        border-top: 1px solid rgba(128, 128, 128, 0.281);
+
+    }
+    .header .navbar ul li a{
+         padding: 0.8rem ;
+        
+    }
+    .header .navbar ul li ul{
+        position: relative; 
+        width: 100rem;
+        left: 0;
+    }
+    .header .navbar ul li ul li a{
+        color: blue;
+        
+    }
+    
+    .header .navbar ul li:hover >   ul{
+        display: initial;
+        position: relative;
+    }
+    .fa-solid {
+        font-size: 25px;
+        color: rgb(73, 155, 187);
+        margin-left: -12rem;
+        display: initial;
+    }
+    #toggle:checked ~ .navbar{
+        display: block;
+    }
+}
+   
+/* -------------------------------------About-------------------------- */
+.about_head {
+    margin-top: 6.9rem;
+    padding: 2rem 9rem;
+    text-align: left;
+    font-size: 2.5rem;
+    color: rgb(216, 214, 214);
+    /* background-color: rgb(18, 107, 107);   */
+    background: url("pattern.jpg");
+    height: 10rem;
+    width: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+/* we are */
+.about_desc_head h2{
+    margin-top: 7rem;
+    font-size:4rem;
+    text-align: center;
+}
+.about_outer{
+    margin-top: 2rem;
+    padding: 2rem 8rem ;
+    height:auto; 
+    color: rgb(41, 41, 41);
+    /* background-color: aqua;   */
+    font-family: 'Montserrat', sans-serif;
+    line-height: 3rem;
+    font-size: 1.9rem;
+    width:auto; 
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+.about_left{
+    /* background-color: rgb(85, 228, 204);       */
+    width: 50%;
+    line-height: 3rem;
+    font-weight: 500;
+    color: rgb(41, 40, 40);
+    height:46rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+.about_innera{
+    position: relative;
+    box-shadow: 2px 2px 10px 2px rgb(25, 27, 27);
+}
+.about_innera img{
+   height: 100%;
+   width: 100%;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    background: black;
+    cursor: pointer;
+}
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    text-align: center;
+
+}
+.about_innera:hover .overlay{
+    opacity: 0.8;
+}
+.about_right{
+    /* background-color: rgb(193, 169, 214);  */
+    width:50%;
+    height:auto;
+    padding:1rem;
+}
+/* -----------------------------home button-------------------------------------------- */
+.sticky{
+    height: 5rem;
+    width: 5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    cursor: pointer;
+    right: 0;
+}
+.sticky img{
+    height: 100%;
+    width: 100%;
+}
+
+
+/* ---------------------------------------------footer ----------------------------------------------*/
+
+.footergrid{
+    margin-top: 5rem;
+    position: relative; 
+    padding: 1rem 8rem;
+    display: grid;
+    height:28rem;
+    gap: 5rem;
+    text-align:left;
+    background-color: rgb(170, 206, 218);
+    grid-template-columns: repeat(4, 1fr);  
+}
+.footercolumn{
+    
+    padding: 0.5rem 1rem;
+    /* background-color: rgb(182, 157, 206);    */
+    border-radius: 5px;
+    line-height: 3rem;
+    font-size: 1.9rem;
+    color:rgb(49, 49, 49);
+}
+
+.footercolumn a{
+    text-decoration: none;
+    font-size: 1.9rem;
+    color:rgb(49, 49, 49);
+    font-weight: 500;
+    
+}
+
+.footercolumn a:hover{
+    
+    color:rgb(51, 31, 231);
+    
+}
+.footercolumn .fa-solid ,.fa-regular{
+    color: rgb(10, 109, 116);
+}
+/* ------------------------------------------final--------------------------------------------*/
+
+.final_outer{
+    position: relative;
+    width: auto;
+    background-color: rgb(170, 206, 218); 
+    height:7rem;
+    display: flex;
+}
+.final_logo{
+    position: absolute;
+    /* background-color: rgb(233, 139, 25);  */
+    height: 5.5rem;
+    width: 16rem;
+    left: 3rem;
+}
+.copywrite{
+    /* background-color: rgb(155, 107, 48);   */
+    position:absolute;
+    width: 50rem;
+    height: 5rem;
+    color:black;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: left;
+    right: 0rem;
+}
+.final_logo img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* -----------------------------------------------responsive------------------------------ */
+@media (max-width: 1040px){
+    html{
+        font-size: 58%;
+    }
+}
+@media (max-width: 970px){
+    html{
+        font-size: 52%;
+    }
+}
+/* ------------------------------------------------------------------------------------------- */
+@media (max-width: 900px){
+    .about_head {
+        margin-top: 11rem;
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 535px){
+    .about_head {
+        margin-top: 11rem;
+        font-size: 2.2rem;
+    }
+}
+@media (max-width: 514px){
+    .about_head {
+        margin-top: 11rem;
+        font-size: 2rem;
+        height: 15rem;
+    }
+}
+@media (max-width: 1302px){
+    .about_outer{
+        height:auto; 
+          
+    }
+}
+@media (max-width: 1200px){
+    .about_outer{
+        height:auto; 
+        font-size: 1.8rem; 
+     
+    }
+}
+@media (max-width: 900px){
+    .about_outer{
+        color: rgb(41, 41, 41);
+        /* background-color: aqua;   */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+    }
+    .about_left{
+        /* background-color: rgb(85, 228, 204);       */
+        width: 100%;
+        line-height: 3rem;
+        font-weight: 500;
+        color: rgb(41, 40, 40);
+        height:auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px;
+    }
+    .about_right{
+        width:100%;
+    }
+}
+/* -----------------------------------------footer-------------------------------------- */
+
+@media (max-width:915px){
+
+    .footergrid{
+        margin-top: 1.5rem;
+        position: relative; 
+        padding: 1rem 8rem;
+        display: grid;
+        width: auto;
+        height:auto;
+        gap: 5rem;
+        text-align:left;
+        background-color: rgb(170, 206, 218);
+        grid-template-columns: repeat(4, 1fr);  
+    }
+    .footercolumn{
+        padding: 0.5rem 1rem;
+        position: relative;
+        /* background-color: rgb(182, 157, 206);  */
+        line-height: 3rem;
+    }
+  
+    .footercolumn .fa-solid ,.fa-regular{
+        float: right;
+    }
+    
+}
+
+@media (max-width:820px){
+    .footergrid{
+        background-color: rgb(170, 206, 218);
+        grid-template-columns: repeat(3, 1fr);  
+    }
+
+    .final_outer{
+        padding-top: 2rem;
+    }
+}
+
+@media (max-width:600px){
+    .footergrid{
+        background-color: rgb(170, 206, 218);
+        grid-template-columns: repeat(2, 1fr);  
+    }
+
+    .final_outer{
+        position: relative;
+        width: auto;
+        /* background-color: rgb(170, 206, 218); */
+        padding:2rem;
+        height:12rem;
+    }
+    .final_logo{
+        position: absolute;
+        /* background-color: rgb(233, 139, 25);  */
+        height: 5.5rem;
+        width: 16rem;
+    }
+    .copywrite{
+        position: absolute;
+        text-align: left;
+        margin-top: 7rem;
+        /* right:5rem; */
+        margin-left: auto;
+        /* background-color: blueviolet; */                      
+    }
+}
+@media (max-width:490px){
+
+    .footercolumn .fa-solid ,.fa-regular{
+        display: none;
+    }
+    .footergrid{
+        background-color: rgb(170, 206, 218);
+        grid-template-columns: repeat(1, 1fr);  
+       
+    }
+   .footercolumn{
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        line-height: 3rem;
+        font-size: 1.9rem;
+        color:rgb(49, 49, 49);
+    }
+    
+    .final_outer{
+        position: relative;
+        width: auto;
+       /* background-color: rgb(170, 206, 218); */
+        padding-top: 2rem;
+        height:12rem;    
+   }
+   .final_logo{
+       position: absolute;
+       /* background-color: rgb(233, 139, 25);  */
+       height: 5.5rem;
+       width: 16rem;
+        
+   }
+   .copywrite{
+       position: absolute;
+       text-align: left;
+       margin-top: 7rem;
+    }
+}
+@media (max-width:473px){
+    .copywrite{
+        position: relative;
+        text-align: left;
+        left: 0;
+        font-size: 1.3rem;   
+    }
+}
+
+        
+        
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
